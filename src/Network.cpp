@@ -1,5 +1,6 @@
-#include "neural/Network.h"
+#include "Network.h"
 #include <cassert>
+
 
 namespace neural {
   Network::Network(int input, int output, vector<int> hidden) :

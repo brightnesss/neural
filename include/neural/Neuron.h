@@ -9,6 +9,7 @@
 
 #include "Activation.h"
 
+
 namespace neural {
   /**
    * This class models a single neuron in one of the @link Layer Layers @endlink that make up a Network
