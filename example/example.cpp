@@ -11,10 +11,6 @@ using namespace neural;
 
 int main()
 {
-	vector<int> hidden_layer;
-	hidden_layer.push_back(8);
-	Network nn(3, 5, hidden_layer);
-
 	string train_feature_add = "..\\data\\train_feature.txt";
 	string train_label_add = "..\\data\\train_label.txt";
 	vector< vector<double> > feature;
@@ -22,19 +18,13 @@ int main()
 	load_feature(train_feature_add, feature);
 	load_label(train_label_add, label, 5);
 
-	string test_feature_add = "..\\data\\test_feature.txt";
-	string test_label_add = "..\\data\\test_label.txt";
-	vector< vector<double> > test_feature;
-	vector< vector<double> > test_label;
-	load_feature(test_feature_add, test_feature);
-	load_label(test_label_add, test_label, 5);
+	vector<int> hidden_layer;
+	hidden_layer.push_back(8);
+	Network nn(feature[0].size(),label[0].size(),hidden_layer);
 
 	vector< vector<double> > param;
 	param = neural::normalize_trainFeature(feature);
-	neural::normalize_testFeature(test_feature, param);
 
-
-	vector<double>::iterator it;
 	size_t times = 0;
 	vector<double>::size_type instanceNum = feature.size();
 	while (times != 500)
@@ -47,7 +37,16 @@ int main()
 	}
 	cout << endl;
 
-	vector<double> pre_label;
+	string test_feature_add = "..\\data\\test_feature.txt";
+	string test_label_add = "..\\data\\test_label.txt";
+	vector< vector<double> > test_feature;
+	vector< vector<double> > test_label;
+	load_feature(test_feature_add, test_feature);
+	load_label(test_label_add, test_label, 5);
+
+	neural::normalize_testFeature(test_feature, param);
+
+	vector<double> pre_label,it;
 	vector<double>::iterator iter;
 	vector< vector<double> > preLabels;
 	vector<double>::size_type testNum = test_feature.size();
