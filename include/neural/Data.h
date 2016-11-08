@@ -49,7 +49,7 @@ namespace neural {
 	 * Find Max score in the result of classification
 	 * Make Max to 1 and all other 0
 	 * @Param:
-	 * vec: Scores of classifacation result
+	 * vec: Scores of classification result
 	 */
 	std::vector<double>::iterator find_max(std::vector<double>& vec);
 }
