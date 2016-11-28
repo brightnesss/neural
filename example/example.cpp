@@ -46,20 +46,14 @@ int main()
 
 	neural::normalize_testFeature(test_feature, param);
 
-	vector<double> pre_label,it;
+	vector<double> pre_label;
 	vector<double>::iterator iter;
 	vector< vector<double> > preLabels;
 	vector<double>::size_type testNum = test_feature.size();
 	for (vector<double>::size_type i = 0;i != testNum;++i)
 	{
 		pre_label = nn.run(test_feature[i]);
-		it = find_max(pre_label);
-		for (vector<double>::iterator my_it = pre_label.begin();my_it != pre_label.end();++my_it) {
-			if (it == my_it) {
-				*my_it = 1;
-			}
-			else *my_it = 0;
-		}
+		predictedLabel(pre_label);
 		preLabels.push_back(pre_label);
 
 		iter = pre_label.begin();

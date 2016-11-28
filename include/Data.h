@@ -52,6 +52,8 @@ namespace neural {
 	 * vec: Scores of classification result
 	 */
 	std::vector<double>::iterator find_max(std::vector<double>& vec);
+
+	void predictedLabel(vector<double> &pre_label);
 }
 
 #endif // !NERUAL_LOADDATA_H

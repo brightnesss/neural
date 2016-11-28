@@ -109,4 +109,16 @@ namespace neural {
 		 return max;
 	 }
 
+	 void predictedLabel(std::vector<double>& pre_label)
+	 {
+		 std::vector<double>::iterator it;
+		 it = find_max(pre_label);
+		 for (std::vector<double>::iterator my_it = pre_label.begin();my_it != pre_label.end();++my_it) {
+			 if (it == my_it) {
+				 *my_it = 1;
+			 }
+			 else *my_it = 0;
+		 }
+	 }
+
 }
