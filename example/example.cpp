@@ -72,12 +72,12 @@ int main()
 	}
 	
 	double error;
-	vector<unsigned int> bad_num;
+	map<unsigned int, double> bad_num;
 	error = CalculateError(test_label, preLabels, bad_num);
 	cout << "The Error is: " << error << endl;
-	for (vector<unsigned int>::const_iterator new_it = bad_num.begin();new_it != bad_num.end();++new_it)
+	for (map<unsigned int,double>::const_iterator new_it = bad_num.begin();new_it != bad_num.end();++new_it)
 	{
-		cout << *new_it << " ";
+		cout << "Wrongly predicted data's index is : " << new_it->first << ", its predicted label is : " << new_it->second << endl;
 	}
 	cout << endl;
 }
