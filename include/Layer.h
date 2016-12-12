@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <ssteram>
 #include "Neuron.h"
 
 using namespace std;

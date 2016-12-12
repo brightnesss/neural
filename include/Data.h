@@ -53,7 +53,7 @@ namespace neural {
 	 */
 	std::vector<double>::iterator find_max(std::vector<double>& vec);
 
-	void predictedLabel(vector<double> &pre_label);
+	void predictedLabel(std::vector<double> &pre_label);
 }
 
 #endif // !NERUAL_LOADDATA_H
