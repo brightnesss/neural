@@ -5,6 +5,7 @@
 #include "CalculateError.h"
 #include <algorithm>
 #include <iostream>
+#include <map>
 
 using namespace std;
 using namespace neural;
@@ -74,4 +75,7 @@ int main()
 		cout << "Wrongly predicted data's index is : " << new_it->first << ", its predicted label is : " << new_it->second << endl;
 	}
 	cout << endl;
+
+	string outputparameters("..\\data\\parameters.txt"); //保存参数的文件路径
+	nn.write(outputparameters); //保存参数
 }

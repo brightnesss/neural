@@ -2,7 +2,7 @@
 #include <iostream>
 
 namespace neural {
-	double CalculateError(std::vector<std::vector<double>> &truth_label, std::vector<std::vector<double>> &output_label, std::map<unsigned int> &bad_number)
+	double CalculateError(std::vector<std::vector<double>> &truth_label, std::vector<std::vector<double>> &output_label, std::map<unsigned int,double> &bad_number)
 	{
 		if (truth_label.size() != output_label.size())
 		{

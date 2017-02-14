@@ -77,7 +77,7 @@ namespace neural {
   }
 
   bool Neuron::write(std::ostream &s) const {
-    assert(sizeof(double) == sizeof(char*));
+    //assert(sizeof(double) == sizeof(char*));
     if ( !s.good() ) return false;
     s << "NEURON" << "\n"
       << "size " << weights.size() << "\n"
@@ -85,7 +85,8 @@ namespace neural {
     double current = 0.0;
     for ( int i = 0; i < weights.size(); i++) {
       current = weights[i];
-      s.write(reinterpret_cast<char*>(&current), sizeof(current));
+      //s.write(reinterpret_cast<char*>(&current), sizeof(current));
+      s << current << " ";
       if (!s.good()) {
 	return false;
       }

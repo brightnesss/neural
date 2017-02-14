@@ -2,6 +2,7 @@
 #define NEURAL_CALCULATEERROR_H
 
 #include <vector>
+#include <map>
 
 namespace neural {
 
@@ -12,7 +13,7 @@ namespace neural {
 	 * predict: predict label of Test-Data
 	 * badNum: the index of wrongly predict Data
 	 */
-	double CalculateError(std::vector< std::vector<double> > &truth, std::vector< std::vector<double> > &predict, std::vector<unsigned int，double> &badNum);
+	double CalculateError(std::vector< std::vector<double> > &truth, std::vector< std::vector<double> > &predict, std::map<unsigned int，double> &badNum);
 }
 
 #endif // !NEURAL_CALCULATEERROR_H
